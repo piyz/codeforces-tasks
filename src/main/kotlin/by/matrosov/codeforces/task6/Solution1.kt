@@ -45,6 +45,8 @@ fun check(i1: Interval, i2: Interval): Interval?{
 }
 
 fun main() {
+
+
     val a = Interval(3,5, setOf(0))
     val b = Interval(2,3, setOf(1))
     val c = Interval(2,3, setOf(2))
@@ -53,53 +55,63 @@ fun main() {
     val f = Interval(4,4, setOf(5))
     val g = Interval(5,10, setOf(6))
 
-
+    //val list = mutableListOf(r,t,y)
     val list = mutableListOf(a,b,c,d,e,f,g)
+    val count = list.size - 1
 
-    var i = 0
+    var i = -1
     var j: Int
     var flag = true
     while (true){
 
-        while (true){
-            j = i + 1
-            println("check " + list[i] + " and " + list[j])
-
-            val che = check(list[i], list[j])
-            if (che != null){
-                list.removeAt(i)
-                list.removeAt(j)
-                list.add(che)
-
-                flag = false
-            }
-            j++
-            if (!flag) break
-        }
         i++
-        if (!flag) break
-    }
+        if (i == list.size - 1){
+            break
+        }
+        j=i+1
+        while (true){
 
-    /*
-    for (i in 0..list.size - 2){
-        for (j in i+1 until list.size){
-            println("check " + list[i] + " and " + list[j])
+            //println("check " + list[i] + " and " + list[j])
+
+            val first = list[i]
+            val second = list[j]
 
             val che = check(list[i], list[j])
             if (che != null){
-                list.removeAt(i)
-                list.removeAt(j)
+                list.remove(first)
+                list.remove(second)
                 list.add(che)
-
+                flag = false
+            }else{
+                j++
             }
+            if (!flag || j == list.size) break
+        }
+
+        if (!flag){
+            i = -1
+            flag = true
         }
     }
-     */
+
+    //println(list)
+    if (list.size == 1){
+        println(-1)
+    }else{
+        for (k in 0..count){
+            if (list[0].indexes.contains(k)){
+                print(1)
+            }else{
+                print(2)
+            }
+            print(" ")
+        }
+    }
 }
 
 fun contains(i1: Interval, i2: Interval): Interval?{
     if (i1.left >= i2.left && i1.left < i2.right && i1.right > i2.left && i1.right <= i2.right){
-        println(Interval(i2.left, i2.right, i2.indexes.plus(i1.indexes)))
+        //println(Interval(i2.left, i2.right, i2.indexes.plus(i1.indexes)))
         return Interval(i2.left, i2.right, i2.indexes.plus(i1.indexes))
     }
     return null
@@ -107,7 +119,7 @@ fun contains(i1: Interval, i2: Interval): Interval?{
 
 fun cross(i1: Interval, i2: Interval): Interval?{
     if (i2.left > i1.left && i2.left < i1.right && i1.right < i2.right){
-        println(Interval(i1.left, i2.right, i1.indexes.plus(i2.indexes)))
+        //println(Interval(i1.left, i2.right, i1.indexes.plus(i2.indexes)))
         return Interval(i1.left, i2.right, i1.indexes.plus(i2.indexes))
     }
     return null
@@ -115,7 +127,7 @@ fun cross(i1: Interval, i2: Interval): Interval?{
 
 fun touch(i1: Interval, i2: Interval): Interval?{
     if (i1.right == i2.left){
-        println(Interval(i1.left, i2.right, i1.indexes.plus(i2.indexes)))
+        //println(Interval(i1.left, i2.right, i1.indexes.plus(i2.indexes)))
         return Interval(i1.left, i2.right, i1.indexes.plus(i2.indexes))
     }
     return null
