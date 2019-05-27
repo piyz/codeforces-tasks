@@ -54,14 +54,47 @@ fun main() {
     val g = Interval(5,10, setOf(6))
 
 
-    val list = listOf(a,b,c,d,e,f,g)
+    val list = mutableListOf(a,b,c,d,e,f,g)
 
+    var i = 0
+    var j: Int
+    var flag = true
+    while (true){
+
+        while (true){
+            j = i + 1
+            println("check " + list[i] + " and " + list[j])
+
+            val che = check(list[i], list[j])
+            if (che != null){
+                list.removeAt(i)
+                list.removeAt(j)
+                list.add(che)
+
+                flag = false
+            }
+            j++
+            if (!flag) break
+        }
+        i++
+        if (!flag) break
+    }
+
+    /*
     for (i in 0..list.size - 2){
         for (j in i+1 until list.size){
             println("check " + list[i] + " and " + list[j])
-            check(list[i], list[j])
+
+            val che = check(list[i], list[j])
+            if (che != null){
+                list.removeAt(i)
+                list.removeAt(j)
+                list.add(che)
+
+            }
         }
     }
+     */
 }
 
 fun contains(i1: Interval, i2: Interval): Interval?{
