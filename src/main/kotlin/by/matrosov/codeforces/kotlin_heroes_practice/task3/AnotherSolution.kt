@@ -1,4 +1,4 @@
-package by.matrosov.codeforces.task3
+package by.matrosov.codeforces.kotlin_heroes_practice.task3
 
 fun readInt(): Int {
     val s : String? = readLine()

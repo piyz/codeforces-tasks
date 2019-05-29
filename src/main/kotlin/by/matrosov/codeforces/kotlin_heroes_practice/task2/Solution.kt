@@ -1,4 +1,4 @@
-package by.matrosov.codeforces.task2
+package by.matrosov.codeforces.kotlin_heroes_practice.task2
 
 fun main(){
     val inputList = mutableListOf<Int>()

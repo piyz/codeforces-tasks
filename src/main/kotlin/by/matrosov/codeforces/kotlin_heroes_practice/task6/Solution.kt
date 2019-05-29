@@ -1,4 +1,4 @@
-package by.matrosov.codeforces.task6
+package by.matrosov.codeforces.kotlin_heroes_practice.task6
 
 data class Section(val min: Int, var indexes: Set<Int>){
     var max: Int? = null
@@ -78,7 +78,7 @@ fun isIntersected(s1:Section, s2:Section):Boolean{
 }
  */
 
-fun isIntersected(s1:Section, s2:Section){
+fun isIntersected(s1: Section, s2: Section){
 
     if (s1.max == null && s2.max == null){
         if (s1.min == s2.min){

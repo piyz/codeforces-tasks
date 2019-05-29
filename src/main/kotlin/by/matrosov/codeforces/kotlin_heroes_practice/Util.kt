@@ -1,4 +1,4 @@
-package by.matrosov.codeforces
+package by.matrosov.codeforces.kotlin_heroes_practice
 
 fun enumeration(word: String){
     val size = word.length

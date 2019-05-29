@@ -1,4 +1,4 @@
-package by.matrosov.codeforces.task5
+package by.matrosov.codeforces.kotlin_heroes_practice.task5
 
 fun main() {
 
