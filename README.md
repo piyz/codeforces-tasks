@@ -23,7 +23,7 @@
   <img src="https://user-images.githubusercontent.com/23150134/58456901-0c848180-812e-11e9-8246-c54f85eafd35.png">
 </p>
 
-### 7. Разбиение и объединение***.
+### 6. Разбиение и объединение***.
 <p align="center"> 
   <img src="https://user-images.githubusercontent.com/23150134/58456924-1ad29d80-812e-11e9-847f-d8df33c530b2.png">
 </p>
