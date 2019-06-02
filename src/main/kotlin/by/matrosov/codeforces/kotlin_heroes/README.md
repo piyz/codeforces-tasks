@@ -13,9 +13,9 @@
   <img src="https://user-images.githubusercontent.com/23150134/58586408-a6017f80-8263-11e9-920c-0e105321e56a.png">
 </p>
 
-### 4.
+### 4. Декодирование числовых последовательностей
 <p align="center"> 
-  <img src="">
+  <img src="https://user-images.githubusercontent.com/23150134/58759993-fb2ae300-853a-11e9-9c72-07902c44b4ed.png">
 </p>
 
 ### 5.
