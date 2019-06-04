@@ -1,4 +1,4 @@
-package by.matrosov.codeforces;
+package by.matrosov.codeforces.round563;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,16 +13,18 @@ public class Task1 {
         int n = Integer.parseInt(reader.readLine());
         List<Integer> list = Arrays.stream(reader.readLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
 
-        if (n == 1){
-            System.out.println(-1);
-            return;
-        }
-
         int sum1 = 0;
         int sum2 = 0;
         for (int i = 0; i < list.size() / 2; i++) {
             sum1 += list.get(i);
             sum2 += list.get(list.size() - 1 - i);
+        }
+
+        if (sum1 != sum2){
+            for (Integer integer : list) {
+                System.out.print(integer + " ");
+            }
+            return;
         }
 
 
@@ -50,29 +52,5 @@ public class Task1 {
             }
         }
         System.out.println(-1);
-    }
-
-    private static int readInt(String s){
-        return Integer.parseInt(s);
-    }
-
-    private static long readLong(String s){
-        return Long.parseLong(s);
-    }
-
-    private static String[] readLineToStringArr() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        return reader.readLine().split(" ");
-    }
-
-    private static List<List<Integer>> readLinesToList(int numberOfLines){
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        List<List<Integer>> list = new ArrayList<>();
-        reader.lines().limit(numberOfLines).forEach(line ->
-                list.add(Arrays.stream(line.split(" "))
-                        .map(Integer::parseInt)
-                        .collect(Collectors.toList()))
-        );
-        return list;
     }
 }
